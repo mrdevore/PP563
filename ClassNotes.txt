@@ -1,0 +1,10 @@
+28 January 2025
+
+git pull = pull changes from my GitHub repository to my local one
+git pull upstream master = pull any changes from original owner's repository into my forked repository
+
+If there are different versions of a file between my local and GitHub repositories, I will need to
+manually open the file and change it in my text editor by deleting the parts I don't want, then pushing
+it to GitHub
+
+escape vims: :wq!
