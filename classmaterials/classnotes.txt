@@ -8,3 +8,32 @@ manually open the file and change it in my text editor by deleting the parts I d
 it to GitHub
 
 escape vims: :wq!
+
+
+# 30 January 2025
+## What is multiple sequence alignment (MSA)?
+    - alignment introduces gaps to align sequences that are similar but not identical (we don't know the
+    exact position in ancestors)
+        - assumption: each line/column shares a common ancestor --> maybe there was a deletion or insertion
+        since the common ancestor, that would leave a gap
+        - we align sequences without knowing the processes that got us there, MSA helps us get there
+            - purely computational, MSA aligns without knowledge of biological processes
+                - super computationally intensive!!
+            - would be ideal if computer could spit out the right answer each time, but often the computer
+            cannot pick the best one --> biologists must have input/opinion and make decisions at every step
+    - ACAT > AGAT example:
+        - would think it was a substitution
+        - we have to include/decide on the cost of substitutions and the cost of indels --> will direct
+        computer's decisions between trees
+            - cost = probability of it happening
+                - often we don't know, but we have to choose anyway
+    - ACATTA > TACA based on known events (see class page)
+        solution: -ACATTA
+                  T--AC-A
+        intutive version: -ACATTA
+                          TACA---
+    - alignment represents a series of events, going forward we will assume we do not have the correct alignment
+        - we guide the algorithm by picking penalties for events (indels, subs)
+
+## MSA algorithm
+    - 
