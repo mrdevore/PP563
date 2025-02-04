@@ -23,7 +23,7 @@ escape vims: :wq!
             cannot pick the best one --> biologists must have input/opinion and make decisions at every step
     - ACAT > AGAT example:
         - would think it was a substitution
-        - we have to include/decide on the cost of substitutions and the cost of indels --> will direct
+        - we have to include/decide on the cost of substitutions and the cost of indels (aka gaps) --> will direct
         computer's decisions between trees
             - cost = probability of it happening
                 - often we don't know, but we have to choose anyway
@@ -36,4 +36,64 @@ escape vims: :wq!
         - we guide the algorithm by picking penalties for events (indels, subs)
 
 ## MSA algorithm
-    - 
+    - Cost of evolutionary events (going forward, check costs in software I use)
+        - Ex: S=AACT S'=CTGG, indel cost=1 sub cost=3
+            solution: AACT--
+                      --CTGG
+                      total cost = 4
+        - Ex: S=AACT S'=CTGG, indel cost=4 sub cost=1
+             solution: AACT
+                       CTGG
+                    total cost = 4
+        - alignment changes even with same input based on costs assigned
+            - knowledge of organism/biology can inform cost assignments, but we can never actually know
+                - CSL suggests playing with costs and seeing what you get based on your system
+    - Other measures of cost
+        - sequence identity
+        - biochemical identity (ex. scoring likelihood of change between dif. amino acids - like in Stone Lab)
+        - some gaps are more costly than others (ex. at the beginning of the sequence)
+
+## Needleman-Wunsch algorithm
+    - dynamic programming algorithm = break up large task into smaller tasks, aka recursive algorithm
+        - evaluating cost of aligning two sites assumes that all sequence before those sites has been aligned already
+    - requires 2 sequences and indel/sub costs
+    - F = matrix representing the minimum cost to align sequences, each point in matrix reps the cost to align 
+    positions with each other (ex a1 with b2 or a1 with b1)
+        - F(i,j) -> i = row, j = column
+            - add a gap in first position of matrix (upper left corner) then write out sequences and fill in costs
+            - build out matrix from upper left corner down, for each box consider the possible answers and 
+            determine the cost for each one, then pick the one with the lowest cost
+                - for each box, add the score from the box up+left from it if a substitution, from the box next to
+                it if gaps
+                    - See lecture notes from CSL --> Needleman-Wunsch algorithm: Costs
+                    - Because: assuming already aligned, so pull value from existing cost of alignment
+                - if two alignments have the same cost, just pick one
+    - most alignment methods use Needleman-Wunsch as a base algorithm
+    - when evaluating final alignment you always start at the bottom right corner, not by looking for lowest cost
+                
+
+#04 February 2025
+What we learned about Needleman-Wunsch is great for two sequences, but what about for many?
+    (exapanding from pairwise to multiple sequence alignment)
+
+## Multiple sequence alignment
+    1. Progressive alignment:
+        - requires a guide tree then builds the tree out from there (leaves to root)
+            - guide tree is made using distances, we'll learn this in Lecture 8
+            - guide tree requirement is a limitation of this method: poor guide? poor alignment
+                - fast to make, but not accurate
+        - takes two sequences at a time and gradually adds more sequences (see figure in Alignment II)
+        - pairwidse distances = cost calculated by Needleman-Wunsch
+        - How to align alignments
+            - computational algorithm, no biology at this stage
+            1. convert each alignment into a profile
+                - profile = how frequently we see each nucleotide at each position, ignoring gaps
+            2. combine the profiles: cost of alignment based on Needleman-Wunsch (outcome = cost matrix of substitutions)
+                - multiply the probabilities of each nucleotide in each position, pull probabilities from profile
+                - sum the products of the probability multiplying, this is the cost of aligning two positions
+                - repeat for every position and possibility (shout out to computers)
+            3. Align profiles using stated cost of gaps and cost matrix for cost of substitution (make F(i,j) table)
+
+If you want to use a software, read the paper about it! Will give good insight for how to use and strenghts/weaknesses
+
+Learn@Home: Sequencing --> look for a paper with a phylogeny and follow their data availability section to access data
