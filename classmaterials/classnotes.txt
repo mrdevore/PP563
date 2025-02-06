@@ -97,3 +97,13 @@ What we learned about Needleman-Wunsch is great for two sequences, but what abou
 If you want to use a software, read the paper about it! Will give good insight for how to use and strenghts/weaknesses
 
 Learn@Home: Sequencing --> look for a paper with a phylogeny and follow their data availability section to access data
+
+#06 February 2025
+For sequencing homework:
+    - add links to paper or databases
+    - start documenting the steps for getting the data in my notebook-log.md
+    - try to use 10-15 taxa/species: larger ones will take longer to run, especially later in the class
+    - troubleshooting datasets: pay attention to file formats (google how to convert files if needed, office hours otherwise)
+    - troubleshooting software installation: google errors, huge part of bioninformatics
+        - use Slack channel!
+
