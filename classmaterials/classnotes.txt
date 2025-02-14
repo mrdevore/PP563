@@ -107,3 +107,73 @@ For sequencing homework:
     - troubleshooting software installation: google errors, huge part of bioninformatics
         - use Slack channel!
 
+#13 February 2025
+Clarifications from last class:
+To Do: consolidate sequences into one file with new/descriptive names
+    Ex. >Minc-proteinname
+
+    - Alignment scores are only comparable within the same software
+        - So... cannot compare score from T-Coffee to Muscle, but can compare scores within Muscle if parameters are different
+         between alignment events
+    - QualiMap: visualizing quality of alignments
+
+---
+
+    - phylogenetic tree is a mathmatical simplification attempting to represent the history of speciation events
+        - external nodes (leaves of tree): extant species
+        - internal nodes: common ancestors
+        - assumptions: 
+            - speciation is instantaneous, represented by strict bifurcation of tree (we know it wasn't)
+            - length of tree is linearly correlated with mutation timing (not true)
+            - rate of mutation is constant (also not true lol)
+            - all trees are binary (each node can only split into 2)
+        - from these given sequences, what is the tree that bests represents the evolution of these sequences?
+            this is what a phylogenetic tree is!
+    - building trees: three methods
+        - distance trees: fast, but lose sequence info
+        - parsimony scores
+        - likelihood score (maximum or bayesian)
+        Regardless of method, steps are the same:
+            1. choose distance or parsimony or likelihood
+            2. guess the tree
+            3. evaluate the score of the tree
+            4. propose a new tree
+            5. evaluate the score of new tree, better than first? keep it! worse than first? back to first one, drop second
+            Repeat until all trees are scored and the optimum tree is found (tree with highest score)
+    
+        Maximum Likelihood recipe: look at slides lol, basically calculates the likelihood of the tree input to the function
+            Same for parsimony
+            Good practice: use different methods to get different trees and compare to see which are best
+
+    Phylogenetic inference:
+        1. choose criterion
+        2. search possible trees for optimum
+
+    Weaknesses of above pipeline:
+        - We don't know what the function looks like, so we need to evaluate a ton of trees. There's no way to
+        evaluate all of them, and as the number of samples increases the number of possible trees is so frickin high
+            ex. 52 samples, # of trees > # atoms in universe
+            So... use different strategies to try and find optimum, like starting from different trees
+            with large numbers of samples, make sure to check how the algorithm decided to stop!
+        - Depends on substitution model which is chosen by the user 
+        - Depends on quality of data: number, alignment quality, etc.
+
+    Example Maximum Likelihood Software: RAxML (Stamatakis 2006)
+        - CSL critique: developers are only focused on speed, not on accuracy. Testing with so many samples in tree that 
+        there is no guarantee of a correct tree; did not test enough trees
+            - Make sure to pay attention to the tree they start with: the bigger the space, the better the starting tree needs to be
+
+    How to navigate the tree space:
+        - 3 ways to adjust trees (LOOK AT CSL'S SLIDES FOR FIGURES), check algorithms for what kind of steps they take
+            1. NNI (nearest neighbor interchange): simplest; focus on one edge of the tree that connects two clades, remove the edge and randomly 
+            reconnect the clades then evaluate the new tree
+                - keeps most of the tree fixed: what happens in each clade is the same, it's just how the clades are
+                related to each other
+                    - why NNI is often called the "smallest" step you can take in the tree space
+            2. SPR (subtree pruning and reconnecting): cut edge and reconnect (I don't understand how this is different from NNI)
+            3. TBR: cut edge and add a new edge in between two random edges
+            - want a method that tests all three steps
+                - only NNI would be really really slow
+                - some algorithms ask the user to determine the frequency of each step
+            
+    Homework: focus on generating alignment for my sequence data!
