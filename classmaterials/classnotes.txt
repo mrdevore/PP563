@@ -214,5 +214,53 @@
 
         Distance-based methods can be run in/through R
 
+20 February 2025 - Guest Lecture
+    What is parsimony?
+        - Ockham's razor: the simplest explanation is the most likely one
+        - what are the fewest changes needed to get to a tree that explains our data?
+        - parsimony does not rely on a model of evolution (different from distance methods)
+            - useful when more complex methods won't work or if you don't want to make the assumptions associated with other methods
+            - good option when rate of evolution/mutation is slow
+                    ex. super conserved things
+                - not a good option for things that evolve quickly or faster than others (ie noncoding regions)
+            - shown to be statistically inconsistent as you increase the number of samples
 
-        
+    Process of Parsimony:
+        1. determine the amount of character change to explain the data with a given tree (tree topology)
+        2. try all possible tree topologies, scoring each to find the best
+
+        Includes costs for subs and indels (unweighted if costs are the same, weighted if not)
+
+        Fitch algorithm: does the parsimony scores for us, uses equal costs
+            - goes through all the internal nodes and computes the changes needed at each node to get this tree
+            - parsimony at the tip is zero because no changes need to be made
+
+    Homework: redoing the tree and calculating the scores
+
+    Method for unequal costs: Sankoff algorithm
+        Ex. mutation b/w purine and pyrimidine
+        Ex. changes between amino acids based on characteristics (polarity, charge, size, etc)
+        Still a little arbitrary, but tries to account for differences in costs
+
+    Newick/Paranthetical Format of a tree: ((W,Y),(X,Z));
+        Anything in a set of parentheses is a clade, commas are nodes
+             /\
+            /  \
+           /    \
+          /\    /\
+         /  \  /  \
+        W    Y X   Z
+
+        Represent branch length as: ((W:2,Y:3):4,...)
+            Branch leading to W has a length of 2, to Y has length of 3, to clade has length of 4
+        Semicolon: represents that the tree is rooted, unrooted if ; is absent
+
+    R Crash Course:
+        ?functionname: gives info on function in lower right window
+        write.tree(treename) = newick format for tree
+        write.tree(treename,filename) = makes a file with that tree
+
+25 February 2025 - Guest Lecture, R tutorial
+    - today: following along with distance/parsimony-based tutorials
+
+    in R: >?function (like >?dist.dna): tells you all the arguments needed for that function and describes the options for those arguments
