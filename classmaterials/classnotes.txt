@@ -264,3 +264,62 @@
     - today: following along with distance/parsimony-based tutorials
 
     in R: >?function (like >?dist.dna): tells you all the arguments needed for that function and describes the options for those arguments
+
+    more notes in distance and parsimony R file!
+
+27 February 2025: Models of Evolution
+    - distance and parsimony methods are outdated, but they still teach them because it's where the field started
+        - now most people use likelihood and bayesian methods
+
+    Starting the slides now:
+    - What is a model? A simplification of real life so we can ask and answer questions
+        - Example: predicting the number of bikes that will pass your bus stop each day
+            use the Poisson model to calculate and use the average number of bikes per day for lambda
+                - lambda value (average number of bikes) determines the mean value and shape of the distribution
+                - only one parameter (lambda), so not capturing all variability --> this is the point of models, they simplify things for us
+                (look at slides for equation) 
+                (fun fact from melette: poisson = fish in french)
+        - models will never be perfect, have to balance accuracy of model with usefulness of model
+            - more accurate = more complicated and more difficult to use
+            - Example: Boston subway map is super simplified and definitely not accurate (stops are not equidistant and subway does not travel
+                in a straight line), but it's more useful for taking the subway than the super realistic satellite image map
+        - How do we know if a model is useful?
+            1. are the assumptions accurate?
+            2. what is the quality of the input data?
+                - if you use a model and get weird results: it might not be the model, it's probably your data!
+    
+    - In phylogenetics we want the probability that we will see particular mutations in our sequences
+        What is the probability that I observe these sequences if I have this tree? (looking at simple tree with DNA slide)
+        - Assumptions: not true, but have to do this for our models to be useful; models exist that get around these but we won't worry about them
+            (the slides have transitions that help make these clearer)
+            1. the mutation process is the same at every branch of the tree, each branch will use the same probability model/equation
+                (this assumption exists for all phylogenetic tools we will use)
+                - Implication: focus on mutations between two sequences
+            2. all sites evolves independently
+                - would be computationally intense to do otherwise
+                - Implication: we can focus on mutations between two sites
+            3. all sites evolve the same (mutation process is the same regardless of what kind of sequence)
+                - Implication: we can use any site to model the mutation process
+        - How likely is it that we went from A to A in time t?
+            - even though we start and end with the same nucleotide, there still could have been mutations throughout t
+            - Poisson equation: in slides; mu=mutation rate t=branch length/time
+                - mutation rate = number of mutation events
+                    - mutation =/= substitution, A>A is still a mutation but not a substitution, A>G is both a substitution and a mutation
+                    - so mutation rate/events includes A>C, A>T, A>G AND A>A
+                - why a Poisson distribution? no reason, arbitrary decision but now everyone uses it
+                - need to know what the probability of each mutation event is, so we need a probability matrix
+                    - estimate these numbers from data
+                    R probability = probability of going from nt>nt in one step
+                    P probability = probability of going from nt>nt in whole branch length/time t
+
+                    i zoned out for a few min
+
+                - choosing a substitution model means choosing Q, which is the likelihood of various base changes, similar to choosing costs
+                - Markov chain: jumping between possibilities, you keep track of where it goes
+                    - probability of the next step only depends on the current one, ignoring all the steps before the current one (frog jumps)
+                - did not go over ergodic or time-reversible assumptions
+            - First model ever: Jukes-Cantor (1969) - assumes everything is equally likely and all sites are equally present in data (25% A, 25% G, etc)
+                - has explicit formulas for transitions, one of the only ones (most models don't have explicit formulas)
+
+            - Slide with assumptions and papers under them: papers are models that try to fix that assumption
+                - new norm for assumption 3: allowing each site to have its own mutation rate
