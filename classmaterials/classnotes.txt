@@ -323,3 +323,101 @@
 
             - Slide with assumptions and papers under them: papers are models that try to fix that assumption
                 - new norm for assumption 3: allowing each site to have its own mutation rate
+
+04 March 2025
+    - when we choose a substitution model we are choosing Q, numbers are estimated from data
+        - for protein, be less flexible
+    - felsenstein model: doesn't matter what nt the site is becoming, just where it's starting
+    - most people use GTR, most complex so people assume it's the best
+        - not necessarily true: pick model based on whether it fits for your data
+        - need to do model selection tests when making probability-based trees
+    - landscape of the mountains is determined by the model, tree optimum (mountain) will change with model and where you start
+    - since we don't know the sequence at the internal nodes, the algorithm will search for the sequences that is most likely given the sequences at the tips of the tree
+    - every single probability method has the same three assumptions (the ones from the last lecture)
+        - also assumes that the way things are evolving is the same from the root to the tips of the tree, this probably isn't true though (but pretend it is)
+        - first two assumptions are not biologically realistic, but the models still work and give us very accurate trees
+
+06 March 2025: Maximum Likelihood Theory
+     Steps:
+        1. Choose a substitution model (choosing Q)
+        2. For a given tree, what is the likelihood?
+        3. Search tree space for one that maximizes the likelihood
+    
+    NNI: nearest-neighbor interchange --> rearranges 4 clades
+
+    Can't pick your starting tree, but can pick how many you want to start with: helps avoid getting stuck in local maxima that aren't actually the best tree
+        - there are usually default values, make sure to look at them and change!
+            - usually work well for small sample sizes, but the larger your sample the more starting trees you should have
+
+    UPGMA and maximum parsimony are bad statistically, bayesian and maximum likelihood are statistically good/consistent and converge to the true tree
+        - but more computationally expensive, so they take longer to run
+
+18 March 2025: Bayesian Inference
+    - Maximum likelihood trees: RaxML + IQTree
+        - make sure to root with outgroup
+        - make sure to plot in R
+    
+    - In Bayesian inference, you want to combine two kinds of information:
+        - Prior: subjective information based on your knowledge
+            - people sometimes have an issue with this but priors aren't super weighted
+            - want to avoid restricting too much via the prior, should have variability in the distribution
+        - Likelihood: from the data (this is all Maximum Likelihood methods care about)
+        - Prior * Likelihood = Posterior distribution
+            - mixes two fxns into one
+            - Example in class: prior is pulling the likelihood distribution and it's optimum toward where the prior is (actual mean = 8.4, adding prior changes to 6.smth)
+            - Priors are good to use when the likelihood is very flat/not well defined
+                - prior allows you to find optimums when you can't get them from the data
+                - there is still a point estimate (like in max like) but the spread helps with confidence in our point value
+                    - if the distribution is very skinny then we are more certain, if wide then there is a lot of variability
+            - sample size is important: small --> posterior is more like the prior, large --> posterior is more like ML distribution
+        - Considerations:
+            - Likelihood: substitution model, model assumptions, does the data have enough signal?
+            - Prior: which prior model, model assumptions, how does this affect inference?
+                - non-informative prior: same peak/distribution as ML
+                    but still use so you can see the shape of the distribution rather than using just ML and getting a single point output
+        - conjugate prior: when the prior and the posterior have the same distribution (ex. gamma) - RARE
+        - Bayesian =/= MCMC
+            - If we have an explicit formula for the posterior, we don't need MCMC - RARE
+            - MCMC = Markov chain Monte Carlo
+                - a way to approximate the posterior when we don't have an explicit form - MOST OF THE TIME
+                * All Bayesian phylogenetic methods do MCMC, it is slow but it works
+                    - people are trying to get away from it, but posterior approximation is difficult and MCMC works really well
+                    - MCMC traverses the whole space to see what the landscape looks like so we can get the posterior distribution
+                        (posterior dist is the landscape)
+                - Have to pick a "Proposal Distribution" for the model to test around at the start: usually symmetric, determined by the Hasting ratio
+
+    - MCMC considerations:
+        - Mixing: how well was the tree space navigated? 
+            - thoroughness of exploring tree space
+            - governed by the Proposal Distribution
+                Rule of Thumb: want acceptance probability of steps around tree space to be around 30%
+                    - near 100% means very slow bc very small steps
+                    - near 0% means very large steps
+                    * can't know this ahead of time, try running on subset of data or for short time then check acceptance probability and adjust as needed
+                        Theme of Class: many trials
+            - Trace Plots: one way to evaluate mixing
+                - y axis = value of posterior
+                - x axis = steps
+                Want this to look like noise, flat regions = bad mixing where it got stuck
+                Programs to plot: Tracer, AWTY (Are We There Yet)
+            - Cold chain vs hot chain robots: heating the chain squashes the tree space topology down so the robots avoid getting stuck in local maxima
+                - need both: heated robot helps cold one jump between peaks (just a computational trick)
+                - Can run MCMC without the hot chain, can run with multiple hot chains
+        - Convergence: how well did you reach all regions of high posterior values?
+            - didn't get stuck in one area, you want to cover all the peaks
+        - Burn-in: how long to reach high posterior value regions?
+            - if you start in a low region, how long to walk to high region?
+        - We have to choose how long to run MCMC: if we let it run long enough it will give us the correct posterior distribution but it will not stop itself like other methods wold
+            - how many steps to take?
+    
+    MCMC for Phylogenetics:
+        1. Start with a random tree and arbitrary branch lengths and model parameters
+        2. New generation: one of the following
+            A. Propose new tree and reject or accept after comparison
+            B. Propose new parameters and evaluate
+        3. idk more stuff she went fast
+        4
+        5
+        6
+        - End with trees that were visited and look for trees that were visited the most (these have high posteriors)
+            - MCMC keeps track of every change and parameter/tree tested
