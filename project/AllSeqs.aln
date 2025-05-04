@@ -1,0 +1,292 @@
+CLUSTAL FORMAT for T-COFFEE Version_12.00.7fb08c2 [http://www.tcoffee.org] [MODE:  ], CPU=0.01 sec, SCORE=672, Nseq=14, Len=852 
+
+Xanthomonas_campestris           MNPRAQWLVACVALAPVVACAMQVDAHGQLRDTSGHAVQLRGVTWPGFDS
+Bacillus_subtilis                MKKIMSAFVGIVLLT-IFCFSPQ---------------------------
+Xanthomonas_oryzae               MLSHIHFLIALATLVPVTAPAMQVSTQAPLVDATGQTLHIRGVTWPGFDR
+Xylella_fastidiosa               MPRFAGTD------------------------------------------
+Streptomyces_mirabilis           MKAASQA------------ARR----------------------------
+Abortiporus_biennis              MVPSHISLL-----------------------------------------
+Colletotrichum_destructivum      MHGLLSIGTALA-------VMAQ---------------------G-----
+Gigaspora_rosea                  MFSSITRIG-------------------------------NSSQSSSEKS
+Rhizoctonia_solani               MFSTAVAAFVLAA---AVNQAAA---------------------E-----
+Stemphylium_lycopersici          MKTSAVLASLLFG---SYAVAA----------------------------
+Globodera_rostochiensis_EXPB1    MSSSEAILCLLCL----LAVNFR----AQIVLAS-VTAKLEGKSWNGGGQ
+Bursaphelenchus_xylophilus_EXP1  MNSFYLLA-LLVP----LALSDN---------------------------
+Meloidogyne_javanica_AP1         MASLKLFITLMS----AFILSKT---------------------F-----
+Faustovirus                      MAAAANDNTT------------------------------SGLAVPSYDS
+                                 *                                                 
+
+Xanthomonas_campestris           ASHVARGLQDITLQQALDQMQAAQINALRIPVCPASLQAQPLAARDVAGE
+Bacillus_subtilis                --------------------------------------------------
+Xanthomonas_oryzae               AGLAAAGMRNNTLAQLLDRMQASDINAVRVPVCAAVLQRAPVAAAEVAGD
+Xylella_fastidiosa               --------------------------------------------------
+Streptomyces_mirabilis           --------------------------------------------------
+Abortiporus_biennis              --------------------------------------------------
+Colletotrichum_destructivum      --------------------------------------------------
+Gigaspora_rosea                  L-------------------------------------------------
+Rhizoctonia_solani               --------------------------------------------------
+Stemphylium_lycopersici          --------------------------------------------------
+Globodera_rostochiensis_EXPB1    ---YVPNFKNNDGSKIA---------------CSVKFSLTPK--------
+Bursaphelenchus_xylophilus_EXP1  --------------------------------------I-----------
+Meloidogyne_javanica_AP1         --------------------------------------------------
+Faustovirus                      C-------------------------------------------------
+                                                                                   
+
+Xanthomonas_campestris           PALRGATALQALDAVVRASTQRGMQVMLAFANGGCDDQAPQLGADTTTWT
+Bacillus_subtilis                --------------------------------------------------
+Xanthomonas_oryzae               STLRGLDSLQLLDAVVHAATQRGMQVVFAFADGGCDDRAPLLGAQQQAWT
+Xylella_fastidiosa               --------------------------------------------------
+Streptomyces_mirabilis           ----------------------------------------------RPRR
+Abortiporus_biennis              --------------------------------------------------
+Colletotrichum_destructivum      --------------------------------------------------
+Gigaspora_rosea                  --------------------------------------------------
+Rhizoctonia_solani               ----------------------------------------------PSRA
+Stemphylium_lycopersici          ----------------------------------------------PFDR
+Globodera_rostochiensis_EXPB1    --------------------------------------------------
+Bursaphelenchus_xylophilus_EXP1  --------------------------------------------------
+Meloidogyne_javanica_AP1         --------------------------------------------------
+Faustovirus                      --------------------------------------------------
+                                                                                   
+
+Xanthomonas_campestris           RGLRMLAQRYRTNTGVIGV----DL-----GSSGYRNATWAGNPP--A-S
+Bacillus_subtilis                --------------------------------------------------
+Xanthomonas_oryzae               RGLVTLARRYGGNTNVLGI----DL-----GSSGYRNASWAGNAA--D-Q
+Xylella_fastidiosa               --------------------------------------------------
+Streptomyces_mirabilis           RGLVT-GTALAMVATVLLVSLIVVL-RS-GRDAGTGN------A------
+Abortiporus_biennis              --------------------------------------------------
+Colletotrichum_destructivum      ------------------------------T-------------------
+Gigaspora_rosea                  --PAL-PRPVQSKKSNNTS-K-----S-----TGWQKTKT----------
+Rhizoctonia_solani               RHLYA-ARAYAQDSHLLED-YD--TYHARYIAIGC------KDAKKNDTD
+Stemphylium_lycopersici          RALVY-KTEVVTETVVIYT----TV-Y----DDEYPEA-----T------
+Globodera_rostochiensis_EXPB1    ----------------KGTT----I-----------GSVWGANAV--S-G
+Bursaphelenchus_xylophilus_EXP1  --------------------------------------------------
+Meloidogyne_javanica_AP1         ------------------------------TSARCPKGTHPKNGE--KS-
+Faustovirus                      --VEF-MRIAQENKHNITN-A-----------------------------
+                                                                                   
+
+Xanthomonas_campestris           DWNRVATR----------------------AAAAVLQHAPHWVIGVEGVG
+Bacillus_subtilis                --------------------------------------------------
+Xanthomonas_oryzae               NWNRVASR----------------------AAAMVLAQAPRWVVGVEGVG
+Xylella_fastidiosa               --------------------------------------------------
+Streptomyces_mirabilis           ----A---------------------------------------------
+Abortiporus_biennis              --------------------------------------------------
+Colletotrichum_destructivum      --------------------------------------------------
+Gigaspora_rosea                  --------------------------------------------------
+Rhizoctonia_solani               FWNNC---------------------------------------------
+Stemphylium_lycopersici          ----S---------------------------------------------
+Globodera_rostochiensis_EXPB1    ASNQYTLAPPADIAPGATHTNAGVNINGNGAPTLKLIEAKYFIDDVCGG-
+Bursaphelenchus_xylophilus_EXP1  --------------------------------------------------
+Meloidogyne_javanica_AP1         TINPI---------------------------------------------
+Faustovirus                      --------------------------------------------------
+                                                                                   
+
+Xanthomonas_campestris           SNAVCSDTARKAPGSNLQPLACVPPRI-AAANL-----VLMPKLAGPDRD
+Bacillus_subtilis                --------------------------------------------------
+Xanthomonas_oryzae               SNAVCSDPGRKALGSNLQPFACVPLDI-DRRHL-----VLMPKLAGPDRD
+Xylella_fastidiosa               ------------------------------------------------MD
+Streptomyces_mirabilis           ---------------------ATPVAG-SQETA-----------------
+Abortiporus_biennis              --------------------------------------------------
+Colletotrichum_destructivum      --------------------------------------------------
+Gigaspora_rosea                  --------------TC-----LTPYYK-WSEWL-----EKKHPKVAPYKF
+Rhizoctonia_solani               ---------------------CHPL--------------AKDADS-----
+Stemphylium_lycopersici          ---------------------SAPVYE-QQKPSTTSTAVVYPTSS-----
+Globodera_rostochiensis_EXPB1    --------------------------------------------------
+Bursaphelenchus_xylophilus_EXP1  --------------------------------------------------
+Meloidogyne_javanica_AP1         ---------------------NNPPAVGTIHPP------VQPPSN-----
+Faustovirus                      ---------------------ITPNTG-TERWF-----IEFCKTAKPDQ-
+                                                                                   
+
+Xanthomonas_campestris           A-----------------AEAFAARDFPDALPATWQRDFGTLAAT--HAV
+Bacillus_subtilis                --------------------------------------------------
+Xanthomonas_oryzae               T-----------------TDAFAAPGFAQALPAMWQRDFGQFAID--HTV
+Xylella_fastidiosa               T-----------------EAA-----------------LGAFSGK--QTV
+Streptomyces_mirabilis           ------------------------------VPPV----------------
+Abortiporus_biennis              -APIFALIFLLSMLLPTVH--AAPISIQPLQKRASL--------------
+Colletotrichum_destructivum      --------------------------------------------------
+Gigaspora_rosea                  AILISLGLFLLAILIIIIV--AAVGGFQNNDTGTTG--------------
+Rhizoctonia_solani               -----------------------------SVPAQCKA-------------
+Stemphylium_lycopersici          -----------------------------AVPAP----------------
+Globodera_rostochiensis_EXPB1    --------------------------------------------------
+Bursaphelenchus_xylophilus_EXP1  --------------------------------------------------
+Meloidogyne_javanica_AP1         -----------------------------KPPSPGYPS------------
+Faustovirus                      -----------------IV--HLLAGFTDDLPATTLA------AETVNKI
+                                                                                   
+
+Xanthomonas_campestris           LPVSTGGGLGDGDPRDP----D-WQHALSTYLDTTG-------LRSAFLG
+Bacillus_subtilis                --------------------------------------------------
+Xanthomonas_oryzae               VPVSLGGGLGDGDPRDP----A-WQTALSGYLANAG-------MRSAFLG
+Xylella_fastidiosa               LPNSLDA-------TDA----EQLAHRIDA-LLAFG-------IRQGFYG
+Streptomyces_mirabilis           ---ASGHKPPTASPAAT-------------------------------AG
+Abortiporus_biennis              -----------------NDAH-----------------------------
+Colletotrichum_destructivum      --------------------------------------------------
+Gigaspora_rosea                  -----------------LAMS-----------------------------
+Rhizoctonia_solani               ---------SSKSYS----------------------------------G
+Stemphylium_lycopersici          ----------ASTSSAA-------------------------------PA
+Globodera_rostochiensis_EXPB1    -------------------------------AP-AG-------SCMGC--
+Bursaphelenchus_xylophilus_EXP1  --------------------------------------------------
+Meloidogyne_javanica_AP1         --PPSSNLPKQPSPP----------------------------------G
+Faustovirus                      LPYH------DSV---SKDAYK-YVHALCPYVHDRWNLNKDKCIGGSFGG
+                                                                                   
+
+Xanthomonas_campestris           SWEIGDANNGGLLARD-------------------------------G-T
+Bacillus_subtilis                --------------------------------------------------
+Xanthomonas_oryzae               SWETGNANNGGLLAPD-------------------------------G-S
+Xylella_fastidiosa               SWMTSAQMPFGLLDND-------------------------------GRT
+Streptomyces_mirabilis           ATTPVP---SAATAPA-------------------------------R-T
+Abortiporus_biennis              --------------------------------------------------
+Colletotrichum_destructivum      --------------------------------------------------
+Gigaspora_rosea                  --------------------------------------------------
+Rhizoctonia_solani               SGDSSPSSSSAAYTPA-------------------------------P-T
+Stemphylium_lycopersici          YTPVVP---EKPSTPAYTPVAPESSTPAAETSTSIYTPEPVYTPKPSP-T
+Globodera_rostochiensis_EXPB1    ----LSNTKMDGP--I---------------------------------N
+Bursaphelenchus_xylophilus_EXP1  -------------------------------------------------T
+Meloidogyne_javanica_AP1         KYPSGPPNHNQPKQPS-------------------------------P-T
+Faustovirus                      LVDCYWRNMGDLTYKP----------------------------------
+                                                                                   
+
+Xanthomonas_campestris           P-----------------RADKLQVLHRAWGVSTALPATASA--KRASAA
+Bacillus_subtilis                -------------------A------------------------------
+Xanthomonas_oryzae               P-----------------RADKLLILRHAWGMLPVMPAIATA--TGDSTK
+Xylella_fastidiosa               P-----------------RTSLIAQLHRWWGVSRVDVASENATTKNQTTT
+Streptomyces_mirabilis           P-----------------------------------PATTRQ--PASGTA
+Abortiporus_biennis              --------------------------------------------------
+Colletotrichum_destructivum      --------------------------------------------------
+Gigaspora_rosea                  --------------------------------------------------
+Rhizoctonia_solani               P-----------------------------------DSG-----------
+Stemphylium_lycopersici          PSPEPEPETSSVVPPPAPTT-------TEAAYTPVTPSLQQA--AAAPTA
+Globodera_rostochiensis_EXPB1    K-----------------NL------------------------------
+Bursaphelenchus_xylophilus_EXP1  P-----------------KAN-----------------------------
+Meloidogyne_javanica_AP1         P-----------------------------------PSSGPS--P-----
+Faustovirus                      ------------------QLN-----------------------------
+                                                                                   
+
+Xanthomonas_campestris           DA---------SKATGWDS-------------T-----F---------SG
+Bacillus_subtilis                -------------SAAYDD-------------L-----H---------EG
+Xanthomonas_oryzae               NA---------SGTKGWNS-------------T-----F---------TG
+Xylella_fastidiosa               DTNGCVAGDNSVPLNGWDT-------------S-----F---------SG
+Streptomyces_mirabilis           SL---------AGRVRPET-------------T-----Y---------RG
+Abortiporus_biennis              --------------------------------------T---------GG
+Colletotrichum_destructivum      -----------------SA-------------A-----T---------SA
+Gigaspora_rosea                  --------------------------------------G---------SG
+Rhizoctonia_solani               ----------------SGE------------------TYT--------GG
+Stemphylium_lycopersici          --------------AAFDP-------------AEPGYTSTGVSTGSFTDV
+Globodera_rostochiensis_EXPB1    -----------------NK-------------P-----FK--------NS
+Bursaphelenchus_xylophilus_EXP1  -----------------KP-------------I-----K---------GG
+Meloidogyne_javanica_AP1         ----------------PSS-------------APS--VPA--------LP
+Faustovirus                      ------------------EFAKLVLSSLTSGFT-----F---------SI
+                                                                                   
+
+Xanthomonas_campestris           TATYTGSGY-----------------------------------------
+Bacillus_subtilis                YATYTGSGY-----------------------------------------
+Xanthomonas_oryzae               IATPTGSGY-----------------------------------------
+Xylella_fastidiosa               VATYTYTGY-----------------------------------------
+Streptomyces_mirabilis           TATHYDAGT-----------------------------------------
+Abortiporus_biennis              RGTFFFP-------------------------------------------
+Colletotrichum_destructivum      IASWYGGNL-----------------------------------------
+Gigaspora_rosea                  DGTYYDPGV-----------------------------------------
+Rhizoctonia_solani               SGTYFYQNG-----------------------------------------
+Stemphylium_lycopersici          DMTVYDNAG-----------------------------------------
+Globodera_rostochiensis_EXPB1    VFTFYGA-G-----------------------------------------
+Bursaphelenchus_xylophilus_EXP1  EFTYYNA-V-----------------------------------------
+Meloidogyne_javanica_AP1         SGQYPPGSNVTSNSLTVPPLYTTNETCLPLTPDMPGVVDQWLNKPKTGRF
+Faustovirus                      TQSKMSNDS-----------------------------------------
+                                                                                   
+
+Xanthomonas_campestris           ----------SGGALLLD---PIPRTAFITALNPVQLNFGG---------
+Bacillus_subtilis                ----------SGGAFLLD---PIPSDMEITAINPADLNYGG---------
+Xanthomonas_oryzae               ----------SGGAVLLD---PIPSDAFITALNPTQMXFGG---------
+Xylella_fastidiosa               ----------KGGALMLD---PIQSHVQITALNPTQLNLGG---------
+Streptomyces_mirabilis           ----------GDGACLYG---PS-DDRMTAAMNHTDYE------------
+Abortiporus_biennis              ----------GLGACGKT---NG-DNDMIVAVNQAVFQQF----------
+Colletotrichum_destructivum      ----------NGGNCALTGYTLP-SGVLGTALSYTNYN------------
+Gigaspora_rosea                  ----------GLGSCGWQ---NY-DSELVAAMNAPQYGVFA---------
+Rhizoctonia_solani               ----------VAGACGTV---HS-DSDYIVAVDYRRYGDLG---------
+Stemphylium_lycopersici          ----------TPGACGVK---LT-DDMMIAAIAQPAWDAKGGSTYDTA--
+Globodera_rostochiensis_EXPB1    ----------GRGACGLD---AG-VPKMSAAGSGNLFKPDGQWVDACRKD
+Bursaphelenchus_xylophilus_EXP1  ----------GDGACGRT---LT---GCVAAVAPTLFDPSAKWVASDLPD
+Meloidogyne_javanica_AP1         VWHALTNAHSYGGECGLG---IQ-YP-YHACVGSDLWSPVKKWVRSCLTD
+Faustovirus                      ----------GLKCCVVD---CY-DDAIRYTGSY-----Y----------
+                                                                                   
+
+Xanthomonas_campestris           -------VKAALA-G-A------------------YLQVTG-PKG-TTTV
+Bacillus_subtilis                -------VIAALA-G-S------------------YLEVEG-PKG-KTTV
+Xanthomonas_oryzae               -------IKAALA-G-A------------------YLEVTG-PKG-KTTV
+Xylella_fastidiosa               -------IPAAMA-G-A------------------YLRVQG-PKG-STTV
+Streptomyces_mirabilis           --------SAKAC-G-A------------------YVRVRA-AGGASVTV
+Abortiporus_biennis              --------RDVICDN-K------------------SMEVRA-NGK-SATV
+Colletotrichum_destructivum      ----------GNC-G-T------------------CLNVKG-PKGNTIKV
+Gigaspora_rosea                  ----DP-GNSPVC-G-K------------------CIQVTG-PKG-TVKV
+Rhizoctonia_solani               -------KQSDLC-G-K------------------KVLVTNTSNGKSVTC
+Stemphylium_lycopersici          ---TGK-SSNPWC-G-T------------------EIDVHH--NGETVKV
+Globodera_rostochiensis_EXPB1    K--RTL-LDDPIC-KNI------------------CVKIDY--NGKTLTV
+Bursaphelenchus_xylophilus_EXP1  K--RYVLGDKVCQ-G-M------------------CVKVEY--KGKTASF
+Meloidogyne_javanica_AP1         IPNHYI-RNDQVC-VNK------------------CVKI--EYKNKTLIM
+Faustovirus                      --------NGYIC-T-NCRSAYHTSCFNKINNETLDAKMDF-NG------
+                                                                       :           
+
+Xanthomonas_campestris           YVTDLYPE-G-ASG-GLDLSHNAFAAIGDM-VQGRIPI-SWKVVRAPVTG
+Bacillus_subtilis                YVTDLYPE-G-AQG-ALDLSPNAFRKICNM-KDGKINI-KWRVVKAPITG
+Xanthomonas_oryzae               YVTDLYPE-A-ASG-GLDLSYNAFAAIGNM-ADGDIPI-SWKVVRAPITG
+Xylella_fastidiosa               YVTDLYPT-G-SSG-GLDLSPNAFASIGNM-AQGRIPV-QWKVVSAPVSG
+Streptomyces_mirabilis           RITNECPLPC-APG-QLDLSAQAFAVLAAP-SLGRIPV-TWSLLSPSTSD
+Abortiporus_biennis              QIVDECPG-C-GPN-DIDLSPAAFKVFADE-SVGVLTV-DWNIF------
+Colletotrichum_destructivum      MVVDKCPEGC-GAG-QLDLFPNVFAALDNP-DKGLINV-QWEQVPCGITS
+Gigaspora_rosea                  KVVDKCPV-C-KSG-DIDMSSTAFKQIANL-DDGRVKI-TWKGC------
+Rhizoctonia_solani               TVADACPT-CDNEN-SLDMSEGAFKQLGDL-SLGLLKI-KYTVL------
+Stemphylium_lycopersici          TIMDLCPG-C-VGH-DIDLSHAAWKGLGLG-APDRFKA-SWNVV------
+Globodera_rostochiensis_EXPB1    PINNKCPE-C-TPS-HVDLSIDAFNYLEPR--GGLVG--KATGX------
+Bursaphelenchus_xylophilus_EXP1  PIEDKCPG-C-QEN-HVDLSENAFKILEXNLGVGKAKDATITYV------
+Meloidogyne_javanica_AP1         PIMDETDY-LK-PY-ELDISEPAFKYLEMNPNAGWCTA-TVTYI------
+Faustovirus                      QRINMCPV-C-HITWDLKNAEAHDKGY----------Q-K---W------
+                                    :            :.                                
+
+Xanthomonas_campestris           NLQYRIKEGGSRWWAAIQVRNHAYPVVKLEVKQGS--TWKNLQKMDYNHF
+Bacillus_subtilis                NFTYRIKEGSSRWWAAIQVRNHKYPVMKMEYEKDG--KWINMEKMDYNHF
+Xanthomonas_oryzae               NVQYRIKEGSSRYWAAIQVRHHIYPVVKLEVKQGS--TWTSLPKTDYNHF
+Xylella_fastidiosa               NLIYRVKKGSSGWWAAIQVREHRYPVLKLEICQDG--TWLNLPKRNYNYF
+Streptomyces_mirabilis           TVSIRYKTGSSRWWCAIQVIGHRNPVARLEVRTGG--GWHQLPRTDYNYF
+Abortiporus_biennis              --------------------------------------------------
+Colletotrichum_destructivum      PLVVRNKEGTSKWWFSMQVMNHNYPVTKFEVSTDGGKSWQPTVRQDYNYW
+Gigaspora_rosea                  --------------------------------------------------
+Rhizoctonia_solani               --------------------------------------------------
+Stemphylium_lycopersici          --------------------------------------------------
+Globodera_rostochiensis_EXPB1    ----------------------RSPI------------------------
+Bursaphelenchus_xylophilus_EXP1  --------------------------------------------------
+Meloidogyne_javanica_AP1         --------------------------------------------------
+Faustovirus                      --------------------------------------------------
+                                                                                   
+
+Xanthomonas_campestris           LGEQ---LGDQPLTLRITDIRGKVLTDTLPRLPEDGSKPAYFEPGHVQFP
+Bacillus_subtilis                VSTN---LGTGSLKVRMTDIRGKVVKDTIPKLPESGTSKAYTVPGHVQFP
+Xanthomonas_oryzae               VGTN---LGNKPLSIRITDIRGKVIADKIPALPEYGGSKAYFEPGHVQFP
+Xylella_fastidiosa               VGTR---LGNQPLSMRMTDIRGQTLIDTLPALPNKASSKAYSVNGNVQFS
+Streptomyces_mirabilis           LSDQ---GSGCGGAIRITDIYGEPLVLNGIALRPD-----AVQPTRVQFA
+Abortiporus_biennis              --------------------------------------------------
+Colletotrichum_destructivum      QRSSGDGFNVDTVTVRVTCSNGKQVTVNNIGTKEKAQ---FTASGN----
+Gigaspora_rosea                  --------------------------------------------------
+Rhizoctonia_solani               -------------------------N------------------------
+Stemphylium_lycopersici          --------------------------------------------------
+Globodera_rostochiensis_EXPB1    --------------------------------------------------
+Bursaphelenchus_xylophilus_EXP1  --------------------S----------------------CDKTQVT
+Meloidogyne_javanica_AP1         --------------------RCEKLG------------------------
+Faustovirus                      --------------------------------------------------
+                                                                                   
+
+Xanthomonas_campestris           --
+Bacillus_subtilis                E-
+Xanthomonas_oryzae               --
+Xylella_fastidiosa               E-
+Streptomyces_mirabilis           QH
+Abortiporus_biennis              --
+Colletotrichum_destructivum      -C
+Gigaspora_rosea                  --
+Rhizoctonia_solani               --
+Stemphylium_lycopersici          --
+Globodera_rostochiensis_EXPB1    --
+Bursaphelenchus_xylophilus_EXP1  KC
+Meloidogyne_javanica_AP1         --
+Faustovirus                      --
+                                   
+
+
+

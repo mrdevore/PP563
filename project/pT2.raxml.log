@@ -1,0 +1,53 @@
+
+RAxML-NG v. 0.9.0 released on 20.05.2019 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+RAxML-NG was called at 03-May-2025 17:57:46 as follows:
+
+raxml-ng --parse --msa TCoffeeAllSeqsMSA.fasta --model JTT+G --prefix pT2
+
+Analysis options:
+  run mode: Alignment parsing and compression
+  start tree(s): 
+  random seed: 1746313066
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX2
+  parallelization: PTHREADS (2 threads), thread pinning: OFF
+
+[00:00:00] Reading alignment from file: TCoffeeAllSeqsMSA.fasta
+[00:00:00] Loaded alignment with 14 taxa and 852 sites
+
+Alignment comprises 1 partitions and 660 patterns
+
+Partition 0: noname
+Model: JTT+G4m
+Alignment sites / patterns: 852 / 660
+Gaps: 65.48 %
+Invariant sites: 37.21 %
+
+
+NOTE: Binary MSA file created: pT2.raxml.rba
+
+* Estimated memory requirements                : 11 MB
+
+* Recommended number of threads / MPI processes: 8
+
+Please note that numbers given above are rough estimates only. 
+Actual memory consumption and parallel performance on your system may differ!
+
+Alignment can be successfully read by RAxML-NG.
+
+
+Execution log saved to: /Users/melettedevore/Desktop/PP563/project/pT2.raxml.log
+
+Analysis started: 03-May-2025 17:57:46 / finished: 03-May-2025 17:57:46
+
+Elapsed time: 0.005 seconds
+

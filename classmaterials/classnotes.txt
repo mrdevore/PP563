@@ -421,3 +421,180 @@
         6
         - End with trees that were visited and look for trees that were visited the most (these have high posteriors)
             - MCMC keeps track of every change and parameter/tree tested
+
+
+03 April 2025
+- Run IQtree on data: it will tell me what model to use
+- Pick priors based on paper i got my data from
+
+- MrBayes will not work on my computer :O I will have to use RevBayes
+    - for MrBayes homework: make the block of code in a nexus file and submit, don't need to actually run
+    - CSL suggested downloading BEAST instead!
+        - downloaded through conda, here's how to activate it:
+
+08 April 2025 - The Coalescent Model
+* No need to do this for project, still have homework for it
+
+    - different parts of the genome can generate different trees, previously concantenation would just combine all the trees
+        - this was the norm in the 90s, early 2000s showed that his approach is statistically inconsistent, especially as the number
+        of trees being combined increases
+        - now: make a gene tree using an alignment method (MrBayes, IQtree, etc) then combine the trees using an orthologous region
+        between each taxa
+            - find recombination-free areas using MDL program (Ane' 2011)
+        - coalescent model takes gene trees and makes species trees
+
+    What is the coalescent model?
+        - branches are usually thick, indicating that this tree encompasses populations. circles on the branches indicate individuals
+        - tracks generations over time from present to past, a coalescent event is when two current individuals have a common ancestor
+            - want to know how long until reaching common ancestor, this will depend on who is sampled
+            - different parts of the genome will coalesce at different times in ancestral populations: different gene trees
+                - from the array of gene trees you get from the genome, which is most likely?
+                    "How good of a fit is this species tree for these gene trees?" (previous questions)
+                    "What is the probability that I observe this gene tree from this candidate species tree?" (what we want)
+        - branches =/= time, = coalescent units (time divided by population size)
+        - species tree with short internal branches may result in tons of different gene trees, this can happen with rapid speciation because
+        there was not enough time for the populations to coalesce
+        - most widely used method: ASTRAL
+            - BUCKy made at UWM
+            - BEAST also common
+
+        - When we build trees, we assume the alignment is perfect. When we build species trees, we assume the gene trees are perfect.
+            - so why separate steps? so it can be scalable to larger datasets
+                - 10 taxa max on doing it all together with co-estimation, more than 10 you need to use a coalescent model
+                    - small enough dataset: always run BEAST! most robust method
+            - very few user choices in building species tree from gene trees because building from gene trees where we made a bunch of choices 
+                * with summary methods
+                * if using Bayesian or MaxLik methods, need to set priors and all that stuff
+
+        - anomaly zone: why concantenation does not work!
+            - if your species tree has really long branches, then the gene tree that is the most likely is the one that matches the species tree
+            - if your species tree has really short branches, then most of your gene trees will be different from the species tree, even if the 
+                species tree is known to be the "true" tree
+                    * this is where the anomaly zone is, and this is why concatenation is bad/inconsistent
+
+15 April 2025 - Coalescent Network Theory (SNaQ)
+
+    General Updates
+        - will not do computer work for this, but there is a tutorial in the class GitHub
+        - converting files: CSL made her own julia script (julia is another programming language) that does this for us
+            - we can use if we download julia, she shared in the slack
+            - there may be scripts online for R or Python built into packages
+
+        In my repository/reproducible script: 
+            - links and information to softwares
+            - if following a tutorial, link it
+            - want a chain of custody for files: 
+                1. what was the input
+                2. what was the process/software
+                3. what was the output
+                4. where to find the files/folders
+            - repository should contain names of files and paths in the commands
+
+    Class content:
+        - what is a phylogenetic network? a mathematical simplification of biology
+            - signal in data that is not exactly tree-like, there is overlap between populations that cannot be explained by a tree
+                - can be represented by an arrow between tree branches: there was some gene flow event
+                -  can result from introgression
+            - can be explicit or implicit:
+                - explicit: we know if the node is speciation or hybridization; we know the process/event that led to the hybridization
+                    - has a number that tells what proportion of genes were transferred through that process (hybridization or normal)
+                - implicit: we don't know what kind of node (lose biological info), no time, unrooted; faster for reconstruction, were preferred for a while
+                * always want to make explicit networks, takes more time but is much more useful
+                    - implicit networks only tell you that there is discordance
+        - why build a phylogenetic network?
+            - if you ignore gene flow that is there you can estimate the wrong tree: so, making a main tree without the hybridization is not always good
+                (main tree = tree without arrows)
+            - coalescent methods are not good for estimating trees when there have been gene flow events
+                - get the wrong tree more with larger gene flow events and more genes to estimate the tree from (given sequence of extants)
+            - you can always get the main tree from the network
+        
+        - Most people who are building networks first estimate gene trees then estimate networks, you can do both at the same time with BEAST2 or PhyloNet,
+            but this is super computationally expensive
+            - biggest dataset that can be used: 50 taxa
+
+        SNaQ: Pseudolikelihood method
+            - evaluating the likelihood of networks is super computationally expensive, SNaQ evaluates likelihood on subnetwork quartets which is much faster
+                - can do all subsets of 10 in less time than evaluating one new network of 10
+                - phylonet could do max 10 taxa with 100 genes (it does traditional likelihood)
+
+            - challenges of building networks
+                - identifiability:
+                    - if the tree space is flat all trees have the same likelihood: means there is not enough signal to understand which tree is best
+                    - we have no idea how many networks are identifiable still
+                        - only types of networks that are identifiable: Level 1 Networks (no gene flow cycles are touching, closer to a tree)
+                            (gene flow cycles are the circles created by the arrows representing gene flow events)
+                            - cannot detect gene flow between sister taxa, but can if gene flow is between distant relatives (unfortunate biologically)
+                            - also, only some of the cycles are identifiable with a reasonable number of genes
+                - network space is huge
+
+            - you don't always need a network, TICR helps determine if a tree is a good fit for the data
+                - tests whether variability in gene trees is well explained with a species tree: yes? then use tree methods! no? then network methods!
+                    - statistical test! there could still be gene flow, but no signal from it to be detected (might need more data!)
+                - TICR is available as an R or julia package (https://github.com/nstenz/TICR)
+
+            - PhyloNetworks package: has SNaQ, Julia, etc
+            - don't have to run these methods for your project!
+
+17 April 2025 - Co-estimation Methods
+    - Beast is very very widely used, but may not scale well to large datasets
+
+    - Co-estimations don't need gene tree inputs, they actually use the sequence and estimate the gene trees as they work on the species trees; accounts
+    for error in gene trees as it does things; very slow, so doesn't scale well
+        - other methods that start with gene trees assume that the gene trees are perfect
+
+    - For Beast tutorials and resources: Taming the Beast 
+        includes troubleshooting, prior selection, etc. --> super useful!!
+    - Beast gives branch lengths in time and estimates population sizes
+
+    Beast Slides:
+        - Inputs: genetic sequences, geneology, demographic model, site model, molecular clock model
+            - Genetic sequences: assumes data are correct; want to include collection times bc beast can do calendar time branch lengths
+            - Geneology:
+                - homochronous tree: all tips at the same timepoint
+                - heterochronous tree: tips from different timepoints
+            - Demographic Models: calculate the probabilities of trees, how you choose which trees to weigh heavier
+                - coalescent model: goes from tips to roots, sees when two populations coalesce with a common ancestor
+                - birth-death model: goes from root to tips, events take dif amounts of time
+                    - birth = speciation, death = extinction
+            - Site Models: substitution model, how to weigh substitutions and indels 
+                 - Beast can help you choose the right model and will allow you to use different models for different genes in the same run
+            - Molecular clock model: rate per branch, not sites
+                - molecular clock: we assume the mutation rate is constant; genetic distance = rate x time
+                - relaxed clock: different mutation rates in different branches
+
+        - look into software Beauti: helper for Beast with a GUI, helps pick priors, MCMC operators, etc; creates file that beast needs for input
+        - other software to help:
+            - Tracer: will help look at convergence and effective sample sizes: use to check!
+                - if you think it has converged, add another million and see if it stays converged or peters off
+                - input log file
+                - pay attention to ESS column (effective sample size): red is too small, yellow isn't great, black is good
+                    sample size is when you pull trees from the MCMC chain to evaluate
+                    - you don't want any red! to fix that, just run it longer and see if it goes away; if you do that and the numbers don't change, 
+                        you need to change your proposals
+            - TreeAnnotator: put your tree file into it
+            - GGTree for R after TreeAnnotator
+
+        - Beauti2:
+            - input: sequence data required; optional sampling times, locations, etc
+            - output: xml file to use with Beast
+            - prior selection: will give you a graph of the prior so you can select, want to avoid very tight/narrow/biased priors
+
+        Beast Best Practice:
+            1. Run without data, sanity check with priors and that way if nothing changes with your data then you know your data isn't good
+            2. Run analysis with multiple chains
+            3. Combine chains
+            4. Assess convergence and mixing
+
+22 April 2025 - BEAST
+    - in Beauti, start with an upgma tree (it's a better starting point)
+    - operators = proposal distribution
+    - length of chain should always be in the millions
+        1. set number 2. run 3. check convergence
+            if converged: yay, if not: run with a longer chain
+
+24 April 2025 - What Else is Out There?
+    - Claudia likes T-Coffee! Highlight this in my final project
+    - Check how many gaps there are in the alignment, if RaxML says that 95% of my alignment is gaps, then that alignment isn't useful
+    - low bootstrap support may not be bad, could point at an area where something interesting is happening
+    - there is no perfect pipeline, the best we can do is say "these are the choices we made, here's the analysis"
+    
